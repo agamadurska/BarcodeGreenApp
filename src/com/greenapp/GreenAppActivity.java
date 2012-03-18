@@ -14,8 +14,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class GreenAppActivity extends Activity {
-	private static final String SUCCESS_SCAN = "Congratualtions! You have scanned ";
-	  
+	private static final String SUCCESS_SCAN = "Congratualtions! You have recycled another item";
+	private static DatabaseHelper dbHelper;  
 	private Button scanButton;
 	private ListView itemList;
 	private List<String> scannedItems;
@@ -33,11 +33,16 @@ public class GreenAppActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        scannedItems = new LinkedList<String>();
+        dbHelper = new DatabaseHelper(this);
+        scannedItems = dbHelper.getAllItemsDescription();
+        if (scannedItems == null) {
+        	scannedItems = new LinkedList<String>();
+        }
         itemList = (ListView) findViewById(R.id.itemList);
         itemList.setAdapter(new ScannedArrayAdapter(this, scannedItems));
         scanButton = (Button)findViewById(R.id.buttonScan);
         scanButton.setOnClickListener(mScan);
+        itemList.invalidate();
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -57,6 +62,7 @@ public class GreenAppActivity extends Activity {
  
                 scannedItems.add(content);
                 itemList.invalidate();
+                dbHelper.addItem(scannedItems.size(), content, productID);
             } else if (resultCode == RESULT_CANCELED) {
                 // Do nothing
             }
