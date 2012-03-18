@@ -1,0 +1,9 @@
+.project
+.classpath
+/bin
+AndroidManifest.out.xml
+android-sdk-linux/*
+gen/
+proguard.cfg
+project.properties
+
