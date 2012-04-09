@@ -21,8 +21,11 @@ import android.widget.Toast;
  */
 public class GreenAppActivity extends Activity {
 	private Button scanButton;
-	private Intent scanIntent = new Intent();
-    private Button.OnClickListener mScan;
+	private Button trackButton;
+	private Button quizButton;
+	private Intent scanIntent;
+	private Intent quizIntent;
+    private Button.OnClickListener listener;
 
     /** Called when the activity is first created. */
     @Override
@@ -30,12 +33,27 @@ public class GreenAppActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         scanButton = (Button) findViewById(R.id.buttonScan);
+        trackButton = (Button) findViewById(R.id.buttonTracker);
+        quizButton = (Button) findViewById(R.id.buttonQuiz);
+        
+        // Quiz button
+        quizIntent = new Intent();
+        quizIntent.setClass(this, QuizActivity.class);
+        listener = new Button.OnClickListener() {
+            public void onClick(View v) {
+            	startActivity(quizIntent);
+            }
+        };
+        quizButton.setOnClickListener(listener);
+        
+        // Scan button
+        scanIntent = new Intent();
         scanIntent.setClass(this, ScanActivity.class);
-        mScan = new Button.OnClickListener() {
+        listener = new Button.OnClickListener() {
             public void onClick(View v) {
             	startActivity(scanIntent);
             }
         };
-        scanButton.setOnClickListener(mScan);
+        scanButton.setOnClickListener(listener);
     }
 }
