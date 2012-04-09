@@ -6,25 +6,28 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/buttonTracker"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Tracker" />
-
-    <Button
-        android:id="@+id/buttonQuiz"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Quiz" />
-
-    <Button
         android:id="@+id/buttonScan"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="center_horizontal"
         android:text="Scan" />
+    
+    <TextView
+        android:id="@+id/itemListLabel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"
+        android:text="RECYCLED ITEMS" >
+    </TextView>
+
+    <ListView
+        android:id="@+id/itemList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </ListView>
 
 </LinearLayout>
