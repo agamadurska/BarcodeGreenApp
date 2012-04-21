@@ -37,17 +37,10 @@ public class QuestionsArrayAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		TextView question;
-		 
 		if (null == convertView) {
-			question = new TextView(context);
-			question.setText("Question " + position);
-			question.setLayoutParams(new Gallery.LayoutParams(400, 500));
-			question.setGravity(Gravity.CENTER);
-			question.setTextColor(Color.WHITE);
+			return questions.get(position).getView();
 		} else {
-			question = (TextView)convertView;
+			return convertView;
 		}
-		return question;
 	}
 }

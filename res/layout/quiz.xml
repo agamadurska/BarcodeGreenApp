@@ -12,11 +12,13 @@
         android:text="Greenpact quiz!"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Gallery
+    <com.greenapp.PatchedGallery
         android:id="@+id/galleryQuestions"
         android:layout_width="fill_parent"
         android:layout_height="0dip"
-        android:layout_weight="0.58" />
+        android:layout_weight="0.58"
+        android:fadingEdgeLength="0dip"
+        android:spacing="10dip" />
 
     <Button
         android:id="@+id/buttonSubmit"
