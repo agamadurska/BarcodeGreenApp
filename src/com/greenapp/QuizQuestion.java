@@ -16,7 +16,7 @@ import android.widget.TextView.OnEditorActionListener;
 public abstract class QuizQuestion {
 	protected Context context;
 	private String question;
-	protected int valueOfAnswer;
+	protected int valueOfAnswer = 0;
 	
 	protected View prepareQuestionView() {
 		TextView view;

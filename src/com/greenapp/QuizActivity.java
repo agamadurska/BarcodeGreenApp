@@ -5,11 +5,21 @@ import java.util.List;
 
 import con.greenapp.R;
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
 import android.widget.Gallery;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 public class QuizActivity extends Activity {
 	List<QuizQuestion> questions = new LinkedList<QuizQuestion>();
+	Button submitButton;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -20,7 +30,36 @@ public class QuizActivity extends Activity {
         
         Gallery gallery = (Gallery) findViewById(R.id.galleryQuestions);
         gallery.setAdapter(new QuestionsArrayAdapter(this, questions));
+
+        submitButton = (Button) findViewById(R.id.buttonSubmit);
+        submitButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				calculateScore();
+			}
+		});
     }
+
+	protected void calculateScore() {
+		LinearLayout view = new LinearLayout(this);
+		view.setOrientation(LinearLayout.VERTICAL);
+		view.setPadding(20, 20, 20, 20);
+		TextView answer;
+		int i = 1;
+		for(QuizQuestion q : questions) {
+			answer = new TextView(this);
+			answer.setText("Question " + i + ": " + q.getAnswer());
+			view.addView(answer);
+			i++;
+		}
+		
+		Dialog pw = new Dialog(this);
+		pw.setTitle("Your Greenapp Quiz Results!");
+		pw.addContentView(view, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		pw.show();
+		
+	}
 
 	private void buildQuestions() {
 		
