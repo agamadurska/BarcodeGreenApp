@@ -5,22 +5,8 @@ import java.util.List;
 
 import con.greenapp.R;
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable.Orientation;
 import android.os.Bundle;
-import android.text.InputType;
-import android.view.Gravity;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.Gallery;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
 
 public class QuizActivity extends Activity {
 	List<QuizQuestion> questions = new LinkedList<QuizQuestion>();
@@ -37,83 +23,56 @@ public class QuizActivity extends Activity {
     }
 
 	private void buildQuestions() {
-        questions.add(new QuizQuestion(this, "How are you?"){
+		
+        questions.add(new NumericalQuizQuestion(this, "How old are you?"){
 
 			@Override
-			public View prepareAnswerView() {
-				final EditText answer = new EditText(context);
-				answer.setInputType(InputType.TYPE_CLASS_NUMBER);
-				hideKeyboard(answer);
-				return answer;
+			public void prepareAnswer() {
+				valueOfAnswer = Integer.parseInt(answer.getText().toString());
 			}
         });
 
-        questions.add(new QuizQuestion(this, "Do you turn off your computer at night?"){
+        questions.add(new MCQQuizQuestion(this, "Do you turn off your computer at night?",
+        		new String[]{"yes", "no"}){
 
 			@Override
-			public View prepareAnswerView() {
-				LinearLayout wrapper = new LinearLayout(context);
-				CheckBox yes = new CheckBox(context);
-				yes.setText("yes");
-				CheckBox no = new CheckBox(context);
-				no.setText("no");
-				wrapper.addView(yes);
-				wrapper.addView(no);
-				return wrapper;
+			public void prepareAnswer() {
+				// TODO Auto-generated method stub
+				
 			}
         	
         });
     
-        questions.add(new QuizQuestion(this, "How often do you take a plane flight (per year)?"){
+        questions.add(new MCQQuizQuestion(this, "How often do you hop on a plane (per year)?",
+        		new String[]{"1-2 a year", "4-5 a year", "even more often!"}){
 
 			@Override
-			public View prepareAnswerView() {
-				EditText answer = new EditText(context);
-				hideKeyboard(answer);
-				return answer;
+			public void prepareAnswer() {
+				// TODO Auto-generated method stub
 			}
         	
         });
         
-        questions.add(new QuizQuestion(this, "Do you turn off the light when you go out of the room?"){
+        questions.add(new MCQQuizQuestion(this, "Do you turn off the light when you go out of the room?",
+        		new String[]{"yes","no"}){
 
 			@Override
-			public View prepareAnswerView() {
-				EditText answer = new EditText(context);
-				hideKeyboard(answer);
-				return answer;
+			public void prepareAnswer() {
+				// TODO Auto-generated method stub
+				
 			}
         	
         });
         
-        questions.add(new QuizQuestion(this, "How old are you?"){
+        questions.add(new NumericalQuizQuestion(this, "How often do you shower?"){
 
 			@Override
-			public View prepareAnswerView() {
-				EditText answer = new EditText(context);
-				hideKeyboard(answer);
-				return answer;
+			public void prepareAnswer() {
+				// TODO Auto-generated method stub
+				
 			}
         	
         });
-	}
-
-	protected void hideKeyboard(final EditText answer) {
-		answer.setOnEditorActionListener(new OnEditorActionListener() {
-
-	        @Override
-	        public boolean onEditorAction(TextView v, int actionId,
-	                KeyEvent event) {
-	            if (event != null&& (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
-	                InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-	                in.hideSoftInputFromWindow(answer
-	                        .getApplicationWindowToken(),
-	                        InputMethodManager.HIDE_NOT_ALWAYS);
-	            }
-	            return false;
-	        }
-
-	    });
 	}
 
 }

@@ -14,10 +14,8 @@ import android.widget.TextView;
 public class QuestionsArrayAdapter extends BaseAdapter {
 
 	private List<QuizQuestion> questions;
-	private Context context;
 
 	public QuestionsArrayAdapter(Context context, List<QuizQuestion> questions) {
-		this.context = context;
 		this.questions = questions;
 	}
 	@Override
