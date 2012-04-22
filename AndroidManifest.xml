@@ -11,6 +11,8 @@
         <activity
             android:name="com.greenapp.GreenAppActivity"
             android:configChanges="keyboardHidden|orientation"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +21,13 @@
             </intent-filter>
         </activity>
         <activity android:name="com.greenapp.ScanActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
                   android:label="@string/app_name">
         </activity>
 		<activity android:name="com.greenapp.QuizActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
                   android:label="@string/app_name">
         </activity>
     </application>

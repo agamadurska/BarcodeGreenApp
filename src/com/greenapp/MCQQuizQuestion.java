@@ -14,8 +14,7 @@ public class MCQQuizQuestion extends QuizQuestion {
 
 	protected String[] choices;
 	protected List<RadioButton> choiceViews;
-	private int chosenIndex = -1;
-	private View view;
+	protected int chosenIndex = -1;
 
 	public MCQQuizQuestion(Context context, String question, String[] choices) {
 		super(context, question);

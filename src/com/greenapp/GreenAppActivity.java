@@ -35,7 +35,7 @@ public class GreenAppActivity extends Activity {
         scanButton = (Button) findViewById(R.id.buttonScan);
         trackButton = (Button) findViewById(R.id.buttonTracker);
         quizButton = (Button) findViewById(R.id.buttonQuiz);
-        
+
         // Quiz button
         quizIntent = new Intent();
         quizIntent.setClass(this, QuizActivity.class);
