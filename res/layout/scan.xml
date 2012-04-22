@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_clr"
+        style="@style/ButtonText"
         android:text="Scan" />
     
     <TextView
@@ -21,6 +23,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:gravity="center"
+        style="@style/ButtonText"
         android:text="RECYCLED ITEMS" >
     </TextView>
 
