@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, GreenAppActivity!</string>
     <string name="app_name">GreenApp</string>
+    <string name="no_gps">GPS was disabled.</string>
 
 </resources>
