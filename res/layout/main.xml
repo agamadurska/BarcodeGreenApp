@@ -3,13 +3,16 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="20dp"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@drawable/background" >
 
     <Button
         android:id="@+id/buttonTracker"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="@drawable/btn_clr"
+        style="@style/ButtonText"
         android:text="Tracker" />
 
     <Button
@@ -17,6 +20,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="@drawable/btn_clr"
+        style="@style/ButtonText"
         android:text="Quiz" />
 
     <Button
@@ -24,6 +29,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="@drawable/btn_clr"
+        style="@style/ButtonText"
         android:layout_gravity="center_horizontal"
         android:text="Scan" />
 
