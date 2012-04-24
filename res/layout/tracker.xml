@@ -2,27 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="20dp"
+    android:background="@drawable/background"
     android:orientation="vertical"
-    android:background="@drawable/background" >
+    android:padding="20dp" >
 
     <Button
         android:id="@+id/buttonStartTracker"
+        style="@style/ButtonText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_trk"
         android:gravity="center"
-        style="@style/ButtonText"
-        android:background="@drawable/btn_clr"
         android:text="Start Tracker" />
 
     <Button
         android:id="@+id/buttonStopTracker"
+        style="@style/ButtonText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_trk"
         android:gravity="center"
-        style="@style/ButtonText"
-        android:background="@drawable/btn_clr"
         android:text="Stop Tracker" />
     
-
+    <TextView
+         android:id="@+id/tripLength"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="Current Trip Length: 0 (miles)"
+         style="@style/InfoText"
+         android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+         android:id="@+id/totalLength"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="Total Distance Travelled: 0 (miles)"
+         style="@style/InfoText"
+         android:gravity="center"
+         android:textAppearance="?android:attr/textAppearanceSmall" />
+    
 </LinearLayout>

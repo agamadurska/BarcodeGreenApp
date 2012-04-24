@@ -91,8 +91,9 @@ public class GreenAppActivity extends Activity {
         0, new Intent(this, NotificationAlarm.class),
         PendingIntent.FLAG_UPDATE_CURRENT);
     alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-        Calendar.getInstance().getTimeInMillis() + 10000,
-        AlarmManager.INTERVAL_DAY, displayIntent);
+        Calendar.getInstance().getTimeInMillis() +
+        AlarmManager.INTERVAL_FIFTEEN_MINUTES,
+        AlarmManager.INTERVAL_HALF_HOUR, displayIntent);
   }
 
 }

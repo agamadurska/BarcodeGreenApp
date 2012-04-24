@@ -1,5 +1,6 @@
 package com.greenapp;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,10 +32,12 @@ public class TipsActivity extends Activity {
     buildTips();
     gallery.setAdapter(new TipsArrayAdapter(this, tips));
 
+    /*
     Toast toast = Toast.makeText(getApplicationContext(),
         "Test Toast",
         Toast.LENGTH_SHORT);
     toast.show();
+     */
   }
 
   private class TipsArrayAdapter extends BaseAdapter {
@@ -109,6 +112,7 @@ public class TipsActivity extends Activity {
         "70mph than 50mph"));
     tips.add(new Tip(this, "Drive more smoothly! Think ahead and avoid sharp " +
         "braking and rapid acceleration. It saves fuel."));
+    Collections.shuffle(tips);
   }
 
 }
