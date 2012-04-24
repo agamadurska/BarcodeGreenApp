@@ -3,13 +3,16 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="20dp"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@drawable/background" >
 
     <Button
         android:id="@+id/buttonStartTracker"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        style="@style/ButtonText"
+        android:background="@drawable/btn_clr"
         android:text="Start Tracker" />
 
     <Button
@@ -17,6 +20,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        style="@style/ButtonText"
+        android:background="@drawable/btn_clr"
         android:text="Stop Tracker" />
     
 
