@@ -57,7 +57,7 @@ public class TrackerService extends Service {
     PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
         new Intent(this, TrackerService.class), 0);
     notification.setLatestEventInfo(this, text, text, contentIntent);
-    notificationManager.notify(R.string.no_gps, notification);
+    notificationManager.notify(1, notification);
   }
 
   private void startTrackerService() {
