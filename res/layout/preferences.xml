@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <PreferenceCategory
+        android:title="Preferences"
+        android:key="GreenPreferences">
+        
+        <CheckBoxPreference
+              android:key="do_notif"
+              android:summary="Enable or disable notifications"
+              android:title="Enable notifications"
+              android:defaultValue="true" />
+        
+        <ListPreference
+            android:key="notif_interval"
+            android:title="Notifications interval"
+            android:summary="Define how often to receive notifications"
+            android:defaultValue="900000"
+            android:entries="@array/notifInterval"
+            android:entryValues="@array/notifIntervalValues"
+            android:dependency="do_notif" />
+    </PreferenceCategory>
+    
+</PreferenceScreen>

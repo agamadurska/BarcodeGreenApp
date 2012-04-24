@@ -5,6 +5,8 @@
     <string name="app_name">GreenApp</string>
     <string name="no_gps">Please activate GPS.</string>
 
+    <string name="green_info">A tree is equivalent to the amount of CO2 absorbed by a tree during a day.</string>
+    
 	<style name="ButtonText">
 	    <item name="android:layout_width">fill_parent</item>
 	    <item name="android:layout_height">wrap_content</item>
@@ -32,5 +34,5 @@
       <item name="android:shadowDy">1</item>
       <item name="android:shadowRadius">2</item>
   </style>
-	
+
 </resources>

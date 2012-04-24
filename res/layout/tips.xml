@@ -10,7 +10,7 @@
         android:id="@+id/tipsHeader"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Tips of the day!"
+        android:text="Tip of the day!"
         android:paddingBottom="20dp"
         style="@style/ButtonText"
         android:textAppearance="?android:attr/textAppearanceLarge" />

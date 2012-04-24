@@ -5,10 +5,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -16,7 +21,6 @@ import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import con.greenapp.R;
 
 
@@ -27,6 +31,7 @@ public class TipsActivity extends Activity {
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
     setContentView(R.layout.tips);
     Gallery gallery = (Gallery) findViewById(R.id.galleryTips);
     buildTips();
@@ -38,6 +43,34 @@ public class TipsActivity extends Activity {
         Toast.LENGTH_SHORT);
     toast.show();
      */
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.green_menu, menu);
+    return true;
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case R.id.menu_preferences:
+        startActivity(new Intent(this, PreferencesActivity.class));
+        return true;
+      case R.id.menu_info:
+        showDialog();
+        return true;
+      default:
+        return super.onOptionsItemSelected(item);
+    }
+  }
+
+  private void showDialog() {
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setMessage(R.string.green_info);
+    AlertDialog alert = builder.create();
+    alert.show();
   }
 
   private class TipsArrayAdapter extends BaseAdapter {

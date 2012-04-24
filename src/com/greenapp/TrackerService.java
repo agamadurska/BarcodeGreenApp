@@ -19,11 +19,10 @@ import con.greenapp.R;
 public class TrackerService extends Service {
 
   public static final String GREEN_APP = "GreenApp";
-  public static final long MIN_TIME_MS = 60000;
+  public static final long MIN_TIME_MS = 2000;
   public static final long MIN_DISTANCE_METERS = 20;
-  public static final float MIN_ACCURACY_METERS = 50;
+  public static final float MIN_ACCURACY_METERS = 100;
 
-  //private static DatabaseHelper dbHelper;
   private final IBinder binder = new LocalBinder();
   private LocationManager locationManager;
   private LocationListener locationListener;
@@ -43,7 +42,6 @@ public class TrackerService extends Service {
     super.onCreate();
     notificationManager =
         (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-    //dbHelper = new DatabaseHelper(this);
     getDistances();
     setTracking(true);
     startTrackerService();
@@ -106,7 +104,6 @@ public class TrackerService extends Service {
       if (location != null) {
         if (location.hasAccuracy() &&
             location.getAccuracy() <= MIN_ACCURACY_METERS) {
-          // dbHelper.addLocation(location);
           if (lastLocation != null) {
             float distance = lastLocation.distanceTo(location);
             tripDistance += distance;
