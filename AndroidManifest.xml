@@ -33,7 +33,19 @@
             android:label="@string/app_name">
         </activity>
         <activity
+            android:name="com.greenapp.TipsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:label="@string/app_name">
+        </activity>
+        <activity
             android:name="com.greenapp.TrackerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="com.greenapp.PreferencesActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:label="@string/app_name">
@@ -42,6 +54,7 @@
             android:name="com.greenapp.TrackerService"
             android:permission="android.permission.ACCESS_FINE_LOCATION">
         </service>
+        <receiver android:name="com.greenapp.NotificationAlarm"></receiver>
     </application>
 
 </manifest>
