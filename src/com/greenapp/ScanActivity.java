@@ -25,15 +25,7 @@ public class ScanActivity extends Activity {
   private Button scanButton;
   private ListView itemList;
   private List<String> scannedItems;
-  private final Button.OnClickListener mScan = new Button.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-      Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-      intent.setPackage("com.google.zxing.client.android");
-      intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
-      startActivityForResult(intent, 0);
-    }
-  };
+  private Button.OnClickListener mScan;
 
   /** Called when the activity is first created. */
   @Override
@@ -48,6 +40,18 @@ public class ScanActivity extends Activity {
     itemList = (ListView) findViewById(R.id.itemList);
     itemList.setAdapter(new ScannedArrayAdapter(this, scannedItems));
     scanButton = (Button)findViewById(R.id.buttonScan);
+    final IntentIntegrator integrator = new IntentIntegrator(this);
+    mScan = new Button.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          integrator.initiateScan();
+          /*
+          Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+          intent.setPackage("com.google.zxing.client.android");
+          intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
+          startActivityForResult(intent, 0);*/
+        }
+      };
     scanButton.setOnClickListener(mScan);
     itemList.invalidate();
   }
@@ -82,8 +86,9 @@ public class ScanActivity extends Activity {
 
   @Override
   public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-    if (requestCode == 0) {
-      if (resultCode == RESULT_OK) {
+	  Log.v("SCAN ACTIVITY", "IN RESULT " + requestCode);
+	  IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+	  if (scanResult != null) {
         String productID = intent.getStringExtra("SCAN_RESULT");
         // Handle successful scan
         // Show toast
@@ -105,7 +110,6 @@ public class ScanActivity extends Activity {
       } else if (resultCode == RESULT_CANCELED) {
         // Do nothing
       }
-    }
   }
 
 	private String translateProductID(String productID) {
