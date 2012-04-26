@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -54,7 +55,10 @@ public class ScanActivity extends Activity {
                 // Show toast
                 Context context = getApplicationContext();
                 String siteContent = HttpRequestHelper.fetchProductInfo(productID);
+                Log.v("HTTP HELPER SITE CONTENT", siteContent);
                 String content = HtmlParser.getDescription(siteContent);
+                //String content = "";
+               // content = translateProductID(productID);
                 if (content == "") {
                 	content = productID + " [description unknown]";
                 }
@@ -72,4 +76,11 @@ public class ScanActivity extends Activity {
             }
         }
     }
+
+	private String translateProductID(String productID) {
+		if (productID.equals("9780593062739")) {
+			return "\"Merde! 1000 Years of Annoying the French\" [Book, 400 pages] - saved 3 trees!";
+		}
+		return null;
+	}
 }

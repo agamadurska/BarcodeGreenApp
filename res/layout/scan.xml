@@ -31,6 +31,8 @@
         android:id="@+id/itemList"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+		android:cacheColorHint="@android:color/transparent"
         android:orientation="vertical" >
     </ListView>
 

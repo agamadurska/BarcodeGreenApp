@@ -48,9 +48,10 @@ public class HttpRequestHelper {
 	  URL url = new URL(uri);
 	  Log.v("HTTP HELPER", url.toString());
 	  HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-	  connection.setRequestProperty("Accept", contentTypes);
-	  connection.setRequestProperty("Accept-Charset", "utf-8,*");
-	  connection.setRequestProperty("User-Agent", "ZXing (Android)");
+	  connection.setRequestMethod("GET");
+	 // connection.setRequestProperty("Accept", contentTypes);
+	 // connection.setRequestProperty("Accept-Charset", "utf-8,*");
+	 // connection.setRequestProperty("User-Agent", "ZXing (Android)");
 	  try {
 	    connection.connect();
 	    if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
