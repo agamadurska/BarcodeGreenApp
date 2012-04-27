@@ -18,7 +18,7 @@ public class NotificationAlarm extends BroadcastReceiver {
     notificationManager =
         (NotificationManager) context.getSystemService(
             Context.NOTIFICATION_SERVICE);
-    Notification notification = new Notification(R.drawable.ic_launcher,
+    Notification notification = new Notification(R.drawable.icon,
         "GreenApp", System.currentTimeMillis());
     PendingIntent contentIntent = PendingIntent.getActivity(context, 0,
         new Intent(context, TipsActivity.class), 0);
