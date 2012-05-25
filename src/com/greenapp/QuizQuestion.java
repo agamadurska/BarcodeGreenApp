@@ -2,6 +2,7 @@ package com.greenapp;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -16,7 +17,7 @@ import android.widget.TextView.OnEditorActionListener;
 public abstract class QuizQuestion {
 	protected Context context;
 	private String question;
-	protected int valueOfAnswer = 0;
+	protected int valueOfAnswer;
 	
 	protected View prepareQuestionView() {
 		TextView view;
@@ -46,6 +47,7 @@ public abstract class QuizQuestion {
 	public abstract void prepareAnswer();
 
 	public int getAnswer() {
+		Log.v("DEBUG", "Getting answer " + valueOfAnswer);
 		return valueOfAnswer;
 	}
 
