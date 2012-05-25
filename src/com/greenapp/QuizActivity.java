@@ -8,7 +8,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -80,16 +79,20 @@ public class QuizActivity extends Activity {
     TextView heading = new TextView(this);
     int sum = 0;
     boolean broken = false;
+    int i = -1;
     for(QuizQuestion q : questions) {
-      q.prepareAnswer();
-      if (q.getAnswer() == 0) {
-    	  Dialog pw = new Dialog(this);
-    	  pw.setTitle("Please answer all the questions!");
-    	  pw.show();
-    	  broken = true;
-    	  break;
-      }
-      sum += q.getAnswer();
+    	i++;
+    	if (i == 0)
+    		continue;
+		q.prepareAnswer();
+		if (q.getAnswer() == 0) {
+			Dialog pw = new Dialog(this);
+			pw.setTitle("Please answer all the questions!");
+			pw.show();
+			broken = true;
+			break;
+		}
+        sum += q.getAnswer();
     }
     if (broken)
     	return;
@@ -105,18 +108,17 @@ public class QuizActivity extends Activity {
 
   private View getScoreDescription(int sum) {
 	TextView description = new TextView(this);
-	Log.v("DEBUG", sum + " SUm");
-	String text = "4";
+	String text = "";
 	switch(sum) {
 		case 0:case 1:case 2:case 3:case 4:case 5:
 		case 6:case 7:case 8:case 9:case 10: text = "Congratulations! Your green footprint is extremely low." +
 				" You care for your planet and thanks to your lifestyle the future generations" +
-				" will have tha chance to enjoy a safe and friendly enviornment. Keep up the good work!"; break;
+				" will have the chance to enjoy a safe and friendly enviornment. Keep up the good work!"; break;
 		case 11:case 12:case 13:case 14: text = "You are doing a relatively good job" +
 				" at keeping the planet healthy. But this might not be enough! Try looking at our tips to" +
 				" see what else you might work on to make your life greener."; break;
 		case 15:case 16:case 17:case 18:case 19:
-		case 20: text = "Your lifestyle is not very environmentaly friendly. " +
+		case 20: text = "Unfortunately, your lifestyle is not very environmentaly friendly! " +
 				"You should think about changing a lot of your habits so that your children have a" +
 				"friendly and health planet to live on. Try giving our tips a chance."; break;
 		case 21:case 22:case 23: text = "You are ruining the planet! You should seriously think about" +
@@ -129,6 +131,8 @@ public class QuizActivity extends Activity {
 
 private void buildQuestions() {
 
+	questions.add(new DummyQuestion(this));
+	
     questions.add(new MCQQuizQuestion(this, "How would you describe the place you live in?",
     		new String[]{"Small studio flat", "2-3 bedroom flat", "Small house in the suburbs", "Impressive mansion with a maid"}){
 
@@ -169,7 +173,7 @@ private void buildQuestions() {
     });
 
     questions.add(new MCQQuizQuestion(this, "What best describes your diet?"
-    		,new String[]{"Vegetarian", "Vegan", "Meat and dairy as often as fruit and vegetables", "Mostly mean and dairy"}){
+    		,new String[]{"Vegetarian", "Vegan", "Meat and dairy as often as fruit and vegetables", "Mostly meat and dairy"}){
 
       @Override
       public void prepareAnswer() {
@@ -178,8 +182,8 @@ private void buildQuestions() {
 
     });
 
-    questions.add(new MCQQuizQuestion(this, "Where do you do your shopping?",
-    		new String[]{"Local farmers market", "Supermarkets mostly", "Restaurants, fast-food chains and simmilar"}){
+    questions.add(new MCQQuizQuestion(this, "Where do you do most of your shopping?",
+    		new String[]{"Local farmers market", "Supermarkets", "Restaurants, fast-food chains and simmilar"}){
 
         @Override
         public void prepareAnswer() {
