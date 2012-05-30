@@ -109,19 +109,35 @@ public class GreenAppActivity extends Activity {
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
         String key) {
+      //Log.v("AAAAAAA", key);
+
+      if (key.equals("notif_started")) {
+        // Start notifications
+        startNotifications(Long.valueOf(
+            sharedPreferences.getString("notif_interval", "900000")));
+        //Log.v("AAAAAAB", sharedPreferences.getString("notif_interval", "900000"));
+      }
+
       if (key.equals("do_notif")) {
-        if (sharedPreferences.getBoolean(key, true)) {
+        if (sharedPreferences.getBoolean("do_notif", false)) {
           startNotifications(Long.valueOf(
               sharedPreferences.getString("notif_interval", "900000")));
+          //          Log.v("AAAAAAC", sharedPreferences.getString("notif_interval", "900000"));
         } else {
-          SharedPreferences.Editor editor = sharedPreferences.edit();
-          editor.putBoolean("notif_started", false);
-          editor.commit();
+          //Log.v("AAAAAAC", "BBBBBAS");
           stopNotifications();
         }
       }
-    }
 
+      if (key.equals("notif_interval")) {
+        if (sharedPreferences.getBoolean("do_notif", false)) {
+          stopNotifications();
+          //          Log.v("AAAAAAC", sharedPreferences.getString("notif_interval", "900000"));
+          startNotifications(Long.valueOf(
+              sharedPreferences.getString("notif_interval", "900000")));
+        }
+      }
+    }
   }
 
   @Override

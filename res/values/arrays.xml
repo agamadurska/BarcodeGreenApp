@@ -5,14 +5,14 @@
     <item name="900000">Every 15 minutes</item>
     <item name="1800000">Every half an hour</item>
     <item name="3600000">Every hour</item>
-    <item name="17280000">Every day</item>
+    <item name="86400000">Every day</item>
   </string-array>
 
   <string-array name="notifIntervalValues">
     <item name="900000">900000</item>
     <item name="1800000">1800000</item>
     <item name="3600000">3600000</item>
-    <item name="17280000">17280000</item>
+    <item name="86400000">86400000</item>
   </string-array>
 
 </resources>
