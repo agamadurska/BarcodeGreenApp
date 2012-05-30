@@ -100,7 +100,7 @@ public class QuizActivity extends Activity {
     view.addView(heading);
     view.addView(getScoreDescription(sum));
     Dialog pw = new Dialog(this);
-    pw.setTitle("Your Greepact Quiz Results!");
+    pw.setTitle("Your Ecobug Quiz Results!");
     pw.addContentView(view, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
     pw.show();
 
@@ -173,7 +173,7 @@ private void buildQuestions() {
     });
 
     questions.add(new MCQQuizQuestion(this, "What best describes your diet?"
-    		,new String[]{"Vegetarian", "Vegan", "Meat and dairy as often as fruit and vegetables", "Mostly meat and dairy"}){
+    		,new String[]{"Vegan", "Vegetarian", "Meat and dairy as often as fruit and vegetables", "Mostly meat and dairy"}){
 
       @Override
       public void prepareAnswer() {

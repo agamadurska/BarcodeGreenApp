@@ -2,8 +2,8 @@
 <resources>
 
     <string name="hello">Hello World, GreenAppActivity!</string>
-    <string name="app_name">Ecobug</string>
-    <string name="no_gps">Please activate your GPS.</string>
+    <string name="app_name">GreenApp</string>
+    <string name="no_gps">Please activate GPS.</string>
 
     <string name="green_info">A tree is equivalent to the amount of CO2 absorbed by a tree during a day.</string>
     
