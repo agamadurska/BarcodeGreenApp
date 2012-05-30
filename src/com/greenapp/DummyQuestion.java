@@ -21,7 +21,7 @@ public class DummyQuestion extends QuizQuestion {
 
 	public View getView() {
 		TextView text = new TextView(context);
-		text.setText("Welcome to our Greenpact Quiz! If you're curious how environmentaly friendly" +
+		text.setText("Welcome to our Ecobug Quiz! If you're curious how environmentally friendly" +
 				" is your lifestyle, this set of questions should give you an answer. Swipe to start " +
 				"the fun!");
 		text.setLayoutParams(new Gallery.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));

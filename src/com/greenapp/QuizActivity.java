@@ -113,12 +113,12 @@ public class QuizActivity extends Activity {
 		case 0:case 1:case 2:case 3:case 4:case 5:
 		case 6:case 7:case 8:case 9:case 10: text = "Congratulations! Your green footprint is extremely low." +
 				" You care for your planet and thanks to your lifestyle the future generations" +
-				" will have the chance to enjoy a safe and friendly enviornment. Keep up the good work!"; break;
+				" will have the chance to enjoy a safe and friendly environment. Keep up the good work!"; break;
 		case 11:case 12:case 13:case 14: text = "You are doing a relatively good job" +
 				" at keeping the planet healthy. But this might not be enough! Try looking at our tips to" +
 				" see what else you might work on to make your life greener."; break;
 		case 15:case 16:case 17:case 18:case 19:
-		case 20: text = "Unfortunately, your lifestyle is not very environmentaly friendly! " +
+		case 20: text = "Unfortunately, your lifestyle is not very environmentally friendly! " +
 				"You should think about changing a lot of your habits so that your children have a" +
 				"friendly and health planet to live on. Try giving our tips a chance."; break;
 		case 21:case 22:case 23: text = "You are ruining the planet! You should seriously think about" +
@@ -152,7 +152,7 @@ private void buildQuestions() {
 
     });
 
-    questions.add(new MCQQuizQuestion(this, "How many times do you travel by air per year?",
+    questions.add(new MCQQuizQuestion(this, "How much do you travel by air per year?",
         new String[]{"1-2 a year", "4-5 a year", "more then 5 times a year"}){
 
       @Override
@@ -183,7 +183,7 @@ private void buildQuestions() {
     });
 
     questions.add(new MCQQuizQuestion(this, "Where do you do most of your shopping?",
-    		new String[]{"Local farmers market", "Supermarkets", "Restaurants, fast-food chains and simmilar"}){
+    		new String[]{"Local farmers market", "Supermarkets", "Restaurants, fast-food chains and similar"}){
 
         @Override
         public void prepareAnswer() {
