@@ -40,7 +40,7 @@ public class GreenAppActivity extends Activity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
-    scanButton = (Button) findViewById(R.id.buttonScan);
+   // scanButton = (Button) findViewById(R.id.buttonScan);
     trackButton = (Button) findViewById(R.id.buttonTracker);
     quizButton = (Button) findViewById(R.id.buttonQuiz);
     tipsButton = (Button) findViewById(R.id.buttonTips);
@@ -57,6 +57,7 @@ public class GreenAppActivity extends Activity {
     quizButton.setOnClickListener(listener);
 
     // Scan button
+    /*
     scanIntent = new Intent();
     scanIntent.setClass(this, ScanActivity.class);
     listener = new Button.OnClickListener() {
@@ -66,7 +67,7 @@ public class GreenAppActivity extends Activity {
       }
     };
     scanButton.setOnClickListener(listener);
-
+	*/
     // Tracker button
     trackIntent = new Intent();
     trackIntent.setClass(this, TrackerActivity.class);

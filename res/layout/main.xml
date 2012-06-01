@@ -33,14 +33,4 @@
         style="@style/ButtonText"
         android:text="Tips" />
 
-    <Button
-        android:id="@+id/buttonScan"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:background="@drawable/btn_clr"
-        style="@style/ButtonText"
-        android:layout_gravity="center_horizontal"
-        android:text="Scan" />
-
 </LinearLayout>
