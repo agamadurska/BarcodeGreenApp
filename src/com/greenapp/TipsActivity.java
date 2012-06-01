@@ -136,35 +136,35 @@ public class TipsActivity extends Activity {
   }
 
   protected void buildTips() {
-    tips.add(new Tip(this, "Next time you go shopping for fruit and " +
-        "vegetables pick the products that have travelled the least. " +
-        "Transport uses energy, choosing locally produced food saves energy " +
-        "and pollution from the truck, ship or plane"));
-    tips.add(new Tip(this, "Drive more slowly! It can save lives, but will " +
-        "also save you money. For example, you use 30% more fuel driving at " +
-        "70mph than 50mph"));
-    tips.add(new Tip(this, "Drive more smoothly! Think ahead and avoid sharp " +
-        "braking and rapid acceleration. It saves fuel."));
+    tips.add(new Tip(this, "Next time you go shopping " +
+        "pick the products that have travelled the least. " +
+        "Transport uses energy! Choosing locally produced food saves energy " +
+        "and causes less pollution."));
+    tips.add(new Tip(this, "Drive slower! It can save lives, but it will " +
+        "also save you money. There is a 30% difference in fuel usage between driving at " +
+        "70mph and 50mph"));
+    tips.add(new Tip(this, "Drive smoothly! Think ahead and avoid sharp " +
+        "breaking and rapid acceleration. It saves fuel."));
     tips.add(new Tip(this, "Under-inflated tyres create more resistance, " +
-        "making your engine work harder. This can increase your fuel " +
+        "making your engine work more then necessary. This can increase your fuel " +
         "consumption by up to 3 per cent"));
     tips.add(new Tip(this, "Using air conditioning and electrical devices " +
-        "like mobile phone chargers increases your fuel consumption, so keep " +
-        "their usage to a minimum"));
-    tips.add(new Tip(this, "Reduce paper. When printing, use both sides of a " +
-        "piece of paper in order to conserve. Keep a scrap paper pile for " +
-        "misprinted or unnecessary documents to either print on or write " +
-        "on"));
+        "like mobile phone chargers in your car increases fuel consumption and pollution levels." +
+        " Keep their usage to a minimum"));
+    tips.add(new Tip(this, "Reduce the amount paper of paper you use. " +
+    	"When printing, use both sides of a " +
+        "sheet. Keep a pile of scrap paper made up of " +
+        "misprinted or unnecessary documents to re-use."));
     tips.add(new Tip(this, "Reduce the duration of your showers. With water " +
-        "flowing up to five gallons per minute, showers consume about " +
+        "flowing up to five gallons per minute, showers account for about " +
         "one-fifth of water used indoors"));
-    tips.add(new Tip(this, "Purchase fruits and vegetables that are organic. " +
-        "Organic foods avoid the use of pesticides. This is better for the " +
-        "environment, as the produce is grown naturally"));
-    tips.add(new Tip(this, "Fix pipe leaks. It is estimated that 13.7% of " +
-        "household water is wasted by leaks"));
+    tips.add(new Tip(this, "Purchase organic fruit and vegetables. " +
+        "Organic foods avoids the use of pesticides. This is safer for the " +
+        "environment!"));
+    tips.add(new Tip(this, "Watch out for pipe leaks. It is estimated that 13.7% of " +
+        "household water is wasted through leakage!"));
     tips.add(new Tip(this, "Buy products made from recycling material to " +
-        "support the recycled product market.When purchasing paper products " +
+        "support the recycled product market. When purchasing paper products " +
         "look for paper that has been recycled using a minimum of 50% " +
         "post-consumer waste"));
     Collections.shuffle(tips);
