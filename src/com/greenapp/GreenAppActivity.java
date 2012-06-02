@@ -24,11 +24,9 @@ import con.greenapp.R;
  */
 public class GreenAppActivity extends Activity {
 
-  private Button scanButton;
   private Button trackButton;
   private Button quizButton;
   private Button tipsButton;
-  private Intent scanIntent;
   private Intent quizIntent;
   private Intent trackIntent;
   private Intent tipsIntent;
@@ -97,22 +95,18 @@ public class GreenAppActivity extends Activity {
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
         String key) {
-      //Log.v("AAAAAAA", key);
 
       if (key.equals("notif_started")) {
         // Start notifications
         startNotifications(Long.valueOf(
             sharedPreferences.getString("notif_interval", "900000")));
-        //Log.v("AAAAAAB", sharedPreferences.getString("notif_interval", "900000"));
       }
 
       if (key.equals("do_notif")) {
         if (sharedPreferences.getBoolean("do_notif", false)) {
           startNotifications(Long.valueOf(
               sharedPreferences.getString("notif_interval", "900000")));
-          //          Log.v("AAAAAAC", sharedPreferences.getString("notif_interval", "900000"));
         } else {
-          //Log.v("AAAAAAC", "BBBBBAS");
           stopNotifications();
         }
       }
@@ -120,7 +114,6 @@ public class GreenAppActivity extends Activity {
       if (key.equals("notif_interval")) {
         if (sharedPreferences.getBoolean("do_notif", false)) {
           stopNotifications();
-          //          Log.v("AAAAAAC", sharedPreferences.getString("notif_interval", "900000"));
           startNotifications(Long.valueOf(
               sharedPreferences.getString("notif_interval", "900000")));
         }

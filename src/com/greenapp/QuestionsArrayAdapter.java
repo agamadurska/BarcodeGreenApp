@@ -3,13 +3,9 @@ package com.greenapp;
 import java.util.List;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Gallery;
-import android.widget.TextView;
 
 public class QuestionsArrayAdapter extends BaseAdapter {
 

@@ -9,8 +9,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import android.util.Log;
-
 public class DatabaseHelper extends SQLiteOpenHelper {
 
   public static final String DB_NAME = "greenAppDB";
@@ -51,12 +49,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     SQLiteDatabase db=this.getReadableDatabase();
     Cursor cur=db.rawQuery("SELECT "+COL_ORDER +" as _id,"+COL_DESCRIPTION +" from "+SCANNED_ITEMS_TABLE , new String[]{});
     int columnIndex = cur.getColumnIndex(COL_DESCRIPTION );
-    Log.v("DATABASE HELPER", "GETTING ITEMS");
     String desc = "";
     while (cur.moveToNext()) {
       desc = cur.getString(columnIndex);
       descriptions.add(desc);
-      Log.v("DATABASE HELPER", "ITEM: " + desc);
     }
     db.close();
     return descriptions;

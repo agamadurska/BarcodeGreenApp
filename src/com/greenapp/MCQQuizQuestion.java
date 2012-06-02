@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
@@ -47,7 +46,6 @@ public class MCQQuizQuestion extends QuizQuestion {
 	}
 
 	protected void setChosenIndex(CompoundButton buttonView) {
-		Log.v("DEBUG", choiceViews.indexOf(buttonView)+"");
 		chosenIndex = choiceViews.indexOf(buttonView);
 	}
 
