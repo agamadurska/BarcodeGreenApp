@@ -13,7 +13,7 @@ import android.location.LocationManager;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
-import con.greenapp.R;
+import com.greenapp.R;
 
 
 public class TrackerService extends Service {
@@ -77,7 +77,7 @@ public class TrackerService extends Service {
   }
 
   private void showNotification(CharSequence text) {
-    Notification notification = new Notification(R.drawable.ic_launcher,
+    Notification notification = new Notification(R.drawable.icon,
         "GreenApp", System.currentTimeMillis());
     PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
         new Intent(this, TrackerService.class), 0);

@@ -15,7 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import con.greenapp.R;
+import com.greenapp.R;
 
 /**
  * Main menu activity

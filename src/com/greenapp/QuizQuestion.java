@@ -2,7 +2,6 @@ package com.greenapp;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -47,7 +46,6 @@ public abstract class QuizQuestion {
 	public abstract void prepareAnswer();
 
 	public int getAnswer() {
-		Log.v("DEBUG", "Getting answer " + valueOfAnswer);
 		return valueOfAnswer;
 	}
 

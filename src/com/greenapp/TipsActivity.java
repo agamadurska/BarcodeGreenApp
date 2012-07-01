@@ -21,7 +21,7 @@ import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import con.greenapp.R;
+import com.greenapp.R;
 
 
 public class TipsActivity extends Activity {

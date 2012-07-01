@@ -2,7 +2,7 @@ package com.greenapp;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-import con.greenapp.R;
+import com.greenapp.R;
 
 
 public class PreferencesActivity extends PreferenceActivity {

@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import con.greenapp.R;
+import com.greenapp.R;
 
 public class QuizActivity extends Activity {
   List<QuizQuestion> questions = new LinkedList<QuizQuestion>();
